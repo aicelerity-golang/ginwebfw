@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/aicelerity-golang/ginwebfw/util"
+	"webfw/util"
 )
 
 func main() {
