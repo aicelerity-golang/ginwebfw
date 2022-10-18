@@ -5,9 +5,19 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"github.com/aicelerity-golang/ginwebfw/util"
 )
 
 func main() {
+
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("cannot load config:", err)
+	}
+
+	log.Println("..Application running in environment: ", config.RuntimeSetup, " and on port: ", config.AppPort)
+
 	router := gin.Default()
 
 	// # Static Files
